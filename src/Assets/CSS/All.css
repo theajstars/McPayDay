@@ -1,0 +1,28 @@
+@import url("./auth.css");
+@import url("./register.css");
+@import url("./login.css");
+@import url("./fonts.css");
+:root {
+  --blue-lighter: #505ab6;
+  --blue-darker: #121a5b;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.text-darker {
+  color: #121a5b;
+}
+.bg-darker {
+  background: #121a5b;
+}
+.text-white {
+  color: #fcfcfc;
+}
+.bg-white {
+  background-color: #fcfcfc;
+}

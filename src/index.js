@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ToastProvider } from "react-toast-notifications";
+import App from "./App";
+import Login from "./Components/Auth/Login";
+import Register from "./Components/Auth/Register";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <ToastProvider>
+    <Router>
+      <Routes>
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/" element={<App />} />
+      </Routes>
+    </Router>
+  </ToastProvider>,
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
