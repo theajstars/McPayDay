@@ -2,6 +2,7 @@
     width: 400px;
     height: fit-content;
     padding-top: 30px;
+    padding-bottom: 10px;
     box-sizing: border-box;
     position: absolute;
     top: 50px;
@@ -69,7 +70,7 @@
     justify-content: space-between;
     box-sizing: border-box;
     padding: 20px 20px;
-    margin: 20px 0px;
+    margin: 10px 0px;
     cursor: pointer;
     transition: 0.12s;
 }

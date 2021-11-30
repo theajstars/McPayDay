@@ -1,15 +1,41 @@
-import React, { useState } from 'react'
-import {Link} from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
+import { motion } from 'framer-motion'
 export default function DashboardNav(){
+    useEffect(() => {
+        document.title = 'Dashboard | McPayDay'
+    }, [])
     const [isMenuOpen, setMenuOpen] = useState(false)
     return(
         <>
-            <span className="toggle-menu">
-                {isMenuOpen && (
+            <motion.span
+                className="toggle-menu flex-row"
+                onClick={() => setMenuOpen((!isMenuOpen))}
+                initial={{
+                    x: 0
+                }}
+                animate={{
+                    x: isMenuOpen ? -200 : 30
+                }}
+            >
+                {isMenuOpen
+                    ?(
+                    <i className="far fa-times"></i>
+                    )
+                    :(
                     <i className="far fa-bars"></i>
-                )}
-            </span>
-            <div className="dashboard-nav flex-column">
+                    )
+                }
+            </motion.span>
+            <motion.div
+                initial={{
+                    x: 300
+                }}
+                animate={{
+                    x: isMenuOpen ? 0 : 300
+                }}
+                className="dashboard-nav flex-column"
+            >
                 <Link to="/dashboard" className="nav-item rubik">
                     Profile
                 </Link>
@@ -22,7 +48,7 @@ export default function DashboardNav(){
                 <Link to="/dashboard" className="nav-item rubik">
                     FAQ.
                 </Link>
-            </div>
+            </motion.div>
         </>
     )
 }
