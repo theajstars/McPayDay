@@ -1,0 +1,16 @@
+.dashboard-nav{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 140px;
+}
+.nav-item{
+    font-weight: 500;
+    font-size: 16px;
+}
+a{
+    text-decoration: none !important;
+    color: #000;
+}

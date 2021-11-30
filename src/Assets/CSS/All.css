@@ -1,7 +1,9 @@
 @import url("./auth.css");
+@import url("./fonts.css");
 @import url("./register.css");
 @import url("./login.css");
-@import url("./fonts.css");
+@import url("./dashboard.css");
+@import url("./dashboard-nav.css");
 :root {
   --blue-lighter: #505ab6;
   --blue-darker: #121a5b;

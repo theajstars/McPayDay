@@ -42,11 +42,7 @@ export default function Register() {
   function checkIsNumber(e, setter) {
     const re = /^[0-9\b]+$/;
     if (e.target.value === "" || re.test(e.target.value)) {
-      setter(
-        isNaN(parseInt(e.target.value))
-          ? e.target.value
-          : parseInt(e.target.value)
-      );
+      setter(e.target.value);
     }
   }
 

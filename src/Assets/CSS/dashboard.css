@@ -1,0 +1,108 @@
+.dashboard-container{
+    width: 400px;
+    height: fit-content;
+    padding-top: 30px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -200px;
+    background: #FCFCFC;
+    border: 1px solid rgba(18, 26, 91, 0.5);
+    border-radius: 20px 20px 0px 0px;
+}
+.dashboard-top{
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 30px 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(18, 26, 91, 0.5);
+
+}
+.wallet-tag{
+    font-size: 14px;
+    color: rgba(18, 26, 91, 0.88);
+}
+.wallet-amount{
+    font-weight: 500;
+    font-size: 25px;
+    color: #121A5B;
+
+}
+.dashboard-btn{
+    background: #121A5B;
+    border-radius: 7px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FCFCFC;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0px 25px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+.dashboard-btn:hover{
+    background: var(--blue-lighter);
+}
+.dashboard-new{
+    padding: 30px;
+    border-bottom: 1px solid rgba(18, 26, 91, 0.5);
+}
+.recent-activity{
+    padding: 30px 30px 0px;
+}
+.recent-head{
+    font-size: 20px;
+}
+/*Transaction section*/
+.recent-trans{
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.recent-transaction{
+    width: 340px;
+    height: 80px;
+    border-radius: 12px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px 20px;
+    margin: 20px 0px;
+    cursor: pointer;
+    transition: 0.12s;
+}
+.recent-transaction:hover{
+    opacity: 0.8;
+}
+.credit-trans{
+    background: #2d892b;
+}
+.debit-trans{
+    background: #CA261C;
+}
+.recent-transaction-left{
+    height: 100%;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+.recent-transaction-date{
+    font-size: 12px;
+    color: rgba(252, 252, 252, 0.7);
+}
+.recent-transaction-amount{
+    font-weight: 500;
+    font-size: 25px;
+    color: #FCFCFC;
+}
+
+@media screen and (max-width: 450px) {
+    div.dashboard-container{
+        width: 90vw;
+        margin-left: -45vw;
+    }
+    div.recent-transaction{
+        width: 80vw;
+    }
+}

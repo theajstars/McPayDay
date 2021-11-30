@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ForgotPassword from "./ForgotPassword";
 
 export default function AuthNav({ link }) {
   return (
@@ -18,6 +19,7 @@ export default function AuthNav({ link }) {
           <Link className="auth-link" to="/login">
             Login
           </Link>
+          <ForgotPassword />
         </>
       )}
     </div>
