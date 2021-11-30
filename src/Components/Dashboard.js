@@ -1,10 +1,72 @@
-import React from 'react'
+import React, {useState} from 'react'
 import DashboardNav from "./DashboardNav";
+import {PaystackButton} from "react-paystack";
+import { useToasts } from 'react-toast-notifications'
 
 export default function Dashboard(){
+    const { addToast, removeAllToasts } = useToasts()
+    const [isOverlayShown, setOverlayShown] = useState(true)
+    const [amount, setAmount] = useState("")
+    function checkIsNumber(e, setter) {
+        const re = /^[0-9\b]+$/;
+        if (e.target.value === "" || re.test(e.target.value)) {
+            setter(e.target.value);
+        }
+    }
+    // Add money
+    const AddMoney = () => {
+        const PUBLIC_KEY = "pk_live_312d97a8b92f9ecf203770f3fd3f9a6d4bedad2a"
+        const email= 'atajiboyeo@gmail.com'
+        setOverlayShown(true)
+    }
+    const addMoneySuccess = (paymentObject) => {
+        console.log(paymentObject)
+    }
+    const addMoneyClose = (error) => {
+        //Payment has failed
+        setOverlayShown(false)
+        addToast('Payment failed!', {
+            appearance: 'error',
+            autoDismiss: false
+        })
+    }
     return(
         <>
             <DashboardNav />
+            <div className={`${isOverlayShown ? "bg-overlay" : 'none'}`}></div>
+            {
+                isOverlayShown && (
+                    // If overlay is shown then display Paystack modal
+                    <>
+                        <div className="add-money-dialog flex-column bg-white">
+                            <div className="flex-row add-money-top">
+
+                            <span className="add-money-head rubik text-darker">
+                                Add Money
+                            </span>
+                            <span className="close-add-money flex-column text-darker"
+                                onClick={() => setOverlayShown(false)}
+                            >
+                                <i className="far fa-times"></i>
+                            </span>
+                            </div>
+                            <input type="text" className="auth-input jost"
+                                   spellCheck="false"
+                                   placeholder="Amount (₦)"
+                                   value={amount}
+                                   onChange={(e) => checkIsNumber(e, setAmount)}
+
+                            />
+                            <PaystackButton className="bg-darker auth-btn text-white jost" amount={amount * 100} email={'atajiboyeo@gmail.com'} publicKey={"pk_live_312d97a8b92f9ecf203770f3fd3f9a6d4bedad2a"}
+                                onSuccess={addMoneySuccess}
+                                onClose={addMoneyClose}
+                            >
+                                Proceed
+                            </PaystackButton>
+                        </div>
+                    </>
+                )
+            }
             <div className="dashboard-container flex-column">
                 <div className="dashboard-top flex-row">
                     <span className="flex-column">
@@ -15,7 +77,9 @@ export default function Dashboard(){
                             ₦7,550
                         </span>
                     </span>
-                    <button className="dashboard-btn jost">
+                    <button className="dashboard-btn jost"
+                        onClick={() => AddMoney()}
+                    >
                         Add Money
                     </button>
                 </div>

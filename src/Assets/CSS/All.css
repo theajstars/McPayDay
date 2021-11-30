@@ -7,6 +7,7 @@
 :root {
   --blue-lighter: #505ab6;
   --blue-darker: #121a5b;
+  --text-white: #fcfcfc;
 }
 .flex-row {
   display: flex;
@@ -20,11 +21,27 @@
   color: #121a5b;
 }
 .bg-darker {
-  background: #121a5b;
+  background: var(--blue-darker);
+}
+.bg-lighter{
+  background: var(--blue-lighter);
 }
 .text-white {
   color: #fcfcfc;
 }
 .bg-white {
   background-color: #fcfcfc;
+}
+.bg-overlay{
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  z-index: 99999;
+}
+.none{
+  display: none;
 }

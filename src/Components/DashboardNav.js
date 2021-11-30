@@ -36,18 +36,26 @@ export default function DashboardNav(){
                 }}
                 className="dashboard-nav flex-column"
             >
-                <Link to="/dashboard" className="nav-item rubik">
-                    Profile
-                </Link>
-                <Link to="/dashboard" className="nav-item rubik">
-                    View all Transactions
-                </Link>
-                <Link to="/dashboard" className="nav-item rubik">
-                    Feedback
-                </Link>
-                <Link to="/dashboard" className="nav-item rubik">
-                    FAQ.
-                </Link>
+                <div className="nav-items flex-column">
+                    <Link to="/dashboard" className="nav-item rubik">
+                        Profile
+                    </Link>
+                    <Link to="/dashboard" className="nav-item rubik">
+                        View all Transactions
+                    </Link>
+                    <Link to="/dashboard" className="nav-item rubik">
+                        Feedback
+                    </Link>
+                    <Link to="/dashboard" className="nav-item rubik">
+                        FAQ.
+                    </Link>
+                </div>
+                <div className="flex-row logout-container">
+                    <button className="bg-lighter text-white jost logout-btn">
+                        Logout
+                    </button>
+                </div>
+
             </motion.div>
         </>
     )
