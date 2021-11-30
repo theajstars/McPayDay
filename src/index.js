@@ -6,15 +6,17 @@ import App from "./App";
 import Login from "./Components/Auth/Login";
 import Register from "./Components/Auth/Register";
 import Dashboard from "./Components/Dashboard";
+import Purchase from "./Components/Purchase";
 
 ReactDOM.render(
   <ToastProvider>
     <Router>
       <Routes>
+        <Route exact path="/" element={<App />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
-      <Route exact path="/dashboard" element={<Dashboard />} />
-        <Route exact path="/" element={<App />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/dashboard/purchase" element={<Purchase />} />
       </Routes>
     </Router>
   </ToastProvider>,

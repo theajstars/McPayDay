@@ -1,26 +1,33 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import DashboardNav from "./DashboardNav";
 import {PaystackButton} from "react-paystack";
 import { useToasts } from 'react-toast-notifications'
+import axios from "axios";
+import {Link} from "react-router-dom";
 
 export default function Dashboard(){
     const { addToast, removeAllToasts } = useToasts()
-    const [isOverlayShown, setOverlayShown] = useState(true)
+    const [isOverlayShown, setOverlayShown] = useState(false)
     const [amount, setAmount] = useState("")
+    const [API_KEY, setAPI_KEY] = useState("pk_live_312d97a8b92f9ecf203770f3fd3f9a6d4bedad2a")
+
     function checkIsNumber(e, setter) {
         const re = /^[0-9\b]+$/;
         if (e.target.value === "" || re.test(e.target.value)) {
             setter(e.target.value);
         }
     }
+    useEffect(() => {
+        //Fetch API key on component Mount
+
+    }, [])
     // Add money
     const AddMoney = () => {
-        const PUBLIC_KEY = "pk_live_312d97a8b92f9ecf203770f3fd3f9a6d4bedad2a"
-        const email= 'atajiboyeo@gmail.com'
         setOverlayShown(true)
     }
     const addMoneySuccess = (paymentObject) => {
         console.log(paymentObject)
+        //If payment is successful send to DB
     }
     const addMoneyClose = (error) => {
         //Payment has failed
@@ -84,9 +91,9 @@ export default function Dashboard(){
                     </button>
                 </div>
                 <div className="dashboard-new">
-                    <button className="dashboard-btn jost">
+                    <Link to='/dashboard/purchase' className="dashboard-btn jost">
                         New Purchase
-                    </button>
+                    </Link>
                 </div>
                 <div className="recent-activity">
                     <span className="text-darker jost recent-head">
