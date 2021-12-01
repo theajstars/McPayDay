@@ -1,6 +1,6 @@
 .purchase-container{
     justify-content: space-between;
-    position: fixed;
+    position: absolute;
     width: 600px;
     left: 50%;
     top: 20px;
