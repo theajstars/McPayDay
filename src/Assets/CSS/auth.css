@@ -67,11 +67,11 @@
   font-size: 16px;
   outline: none;
 }
-.auth-btn:disabled {
+button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
-.auth-btn:disabled:hover {
+button:disabled:hover {
   background: var(--blue-darker);
 }
 .auth-btn:hover {

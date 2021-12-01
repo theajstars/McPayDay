@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from "react";
+import DashboardNav from "./DashboardNav";
+import {checkIsNumber} from "./Auth/Register";
 
 export default function Purchase(){
+    const [amount, setAmount] = useState("")
+    const [tryPayment, setTryPayment] = useState(false)
+    const [isPayButtonDisabled, setPayButtonDisabled] = useState(false)
+    const attemptToPay = () => {
+        setTryPayment(true)
+        setPayButtonDisabled(true)
+    }
     return (
         <>
+            <DashboardNav />
             <div className="purchase-container flex-column bg-white">
                 <span className="caterer-head text-darker jost">
                     Lorem ipsum castes
                 </span>
                 <center>
-                    <small className='raleway text-darker' style={{
+                    <small className="rubik text-darker" style={{
                         padding: '12px'
                     }}>
                         Available Items
@@ -74,9 +84,15 @@ export default function Purchase(){
                         <input type="text" className="auth-input jost"
                             placeholder='Amount (₦)'
                             spellCheck='false'
+                            value={amount}
+                            onChange={(e) => checkIsNumber(e, setAmount)}
+
                         />
-                        <button className="logout-btn bg-lighter text-white jost">
-                            Pay now
+                        <button className="logout-btn bg-lighter text-white jost"
+                            disabled={isPayButtonDisabled}
+                            onClick={attemptToPay}
+                        >
+                            Pay now{tryPayment && (<> <i className="far fa-spinner-third fa-spin"></i></>)}
                         </button>
                     </div>
                 </div>

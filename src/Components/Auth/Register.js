@@ -3,6 +3,13 @@ import { useToasts } from "react-toast-notifications";
 import AuthNav from "./AuthNav";
 import axios from "axios";
 
+function checkIsNumber(e, setter) {
+  const re = /^[0-9\b]+$/;
+  if (e.target.value === "" || re.test(e.target.value)) {
+    setter(e.target.value);
+  }
+}
+
 function validateEmail(email) {
   const re =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -131,4 +138,4 @@ export default function Register() {
     </>
   );
 }
-export { validateEmail };
+export { validateEmail, checkIsNumber };
