@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useToasts } from "react-toast-notifications";
 import AuthNav from "./AuthNav";
+import axios from "axios";
 
 function validateEmail(email) {
   const re =
@@ -48,10 +49,21 @@ export default function Register() {
 
   const registerUser = () => {
     removeAllToasts();
-    addToast("Form successfully validated!", {
-      autoDismiss: true,
-      appearance: "success",
-    });
+    axios.post(`http://localhost:8080/user/register`, {name: name, email: email, pin: pin })
+        .then(res => {
+          if(res.data.user){
+            addToast('User already exists!', {
+              appearance: "warning",
+              autoDismiss: true
+            })
+          }
+          if(!res.data.success && !res.data.user){
+            addToast('An error occured!',{
+              appearance: 'error',
+              autoDismiss: true
+            })
+          }
+        })
   };
   return (
     <>
