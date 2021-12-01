@@ -4,9 +4,11 @@
 @import url("./login.css");
 @import url("./dashboard.css");
 @import url("./dashboard-nav.css");
+@import url("./purchase.css");
+@import url("./small_screens/small-purchase.css");
 :root {
   --blue-lighter: #505ab6;
-  --blue-darker: #121a5b;
+  --blue-darker: #101b7a;
   --text-white: #fcfcfc;
 }
 .flex-row {

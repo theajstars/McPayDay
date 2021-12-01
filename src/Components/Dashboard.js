@@ -102,43 +102,31 @@ export default function Dashboard(){
                     <div className="recent-trans flex-column">
                         <div className="recent-transaction credit-trans flex-row">
                             <span className="flex-column recent-transaction-left">
-                                <span className="rubik text-white">
+                                <span className="rubik text-darker">
                                     Add money
                                 </span>
                                 <span className="recent-transaction-date">
                                     Sunday, December 21 2021
                                 </span>
                             </span>
-                            <span className="recent-transaction-amount text-white roboto">
+                            <span className="recent-transaction-amount roboto">
                                 +7,550
                             </span>
                         </div>
                         <div className="recent-transaction debit-trans flex-row">
                             <span className="flex-column recent-transaction-left">
-                                <span className="rubik text-white">
-                                    Lorem ipsum debitors
+                                <span className="rubik text-darker">
+                                    Lorem ipsum debtors
                                 </span>
                                 <span className="recent-transaction-date">
                                     Sunday, December 28 2021
                                 </span>
                             </span>
-                            <span className="recent-transaction-amount text-white roboto">
+                            <span className="recent-transaction-amount roboto">
                                 -580
                             </span>
                         </div>
-                        <div className="recent-transaction credit-trans flex-row">
-                            <span className="flex-column recent-transaction-left">
-                                <span className="rubik text-white">
-                                    Add money
-                                </span>
-                                <span className="recent-transaction-date">
-                                    Sunday, December 21 2021
-                                </span>
-                            </span>
-                            <span className="recent-transaction-amount text-white roboto">
-                                +7,550
-                            </span>
-                        </div>
+
                     </div>
                 </div>
             </div>

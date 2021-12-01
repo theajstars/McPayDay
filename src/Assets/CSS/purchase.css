@@ -1,0 +1,75 @@
+.purchase-container{
+    justify-content: space-between;
+    position: fixed;
+    width: 600px;
+    left: 50%;
+    top: 20px;
+    margin-left: -300px;
+    border: 1px solid rgba(18, 26, 91, 0.5);
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 30px 20px;
+}
+.caterer-head{
+    font-weight: 500;
+    font-size: 23px;
+}
+.food-items{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 33%);
+    align-items: center;
+    place-items: center;
+    box-sizing: border-box;
+    max-height: 250px;
+    overflow-y: auto;
+}
+.food-items::-webkit-scrollbar {
+    width: 9px;
+    background: #FCFCFC;
+    border: 1px solid #505AB6;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+.food-items::-webkit-scrollbar-thumb {
+    width: 9px;
+    background: #505AB6;
+    border-radius: 7px;
+}
+.food-items::-webkit-scrollbar-thumb:hover {
+    background: var(--blue-darker);
+}
+.food-grid-item{
+    width: 90%;
+
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #121A5B;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 15px -6px rgba(18, 26, 91, 0.5);
+    border-radius: 4px;
+    margin: 10px 0px;
+}
+.purchase-section{
+    margin-top: 20px;
+    width: 100%;
+    background: #FCFCFC;
+    border: 1px solid rgba(18, 26, 91, 0.31);
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 20px 30px;
+}
+.purchase-narration{
+    height: 100px;
+}
+.purchase-narration::placeholder{
+    opacity: 0.8;
+}
+.purchase-row{
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.purchase-row .auth-input{
+    width: 70%;
+}

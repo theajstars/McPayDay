@@ -1,0 +1,29 @@
+@media screen and (max-width: 650px){
+    .purchase-row .auth-input{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 650px){
+    div.purchase-container{
+        width: 90vw;
+        margin-left: -45vw;
+    }
+    div.food-items{
+        grid-template-columns: repeat(2, 50%);
+    }
+}
+
+@media screen and (max-width: 460px) {
+    div.food-items {
+        grid-template-columns: repeat(1, 100%);
+    }
+    .purchase-row .auth-input, .purchase-row .logout-btn{
+        width: 100%;
+    }
+    .purchase-row .logout-btn{
+        margin-top: 20px;
+    }
+    div.purchase-row{
+        flex-direction: column;
+    }
+}

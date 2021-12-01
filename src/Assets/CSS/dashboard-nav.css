@@ -56,4 +56,8 @@ a{
     width: 120px;
     height: 40px;
     border-radius: 3px;
+    transition: 0.12s;
+}
+.logout-btn:hover{
+    background: var(--blue-darker);
 }
