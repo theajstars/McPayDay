@@ -73,3 +73,6 @@
 .purchase-row .auth-input{
     width: 70%;
 }
+.confirm-purchase-dialog{
+    /*justify-content: space-around;*/
+}
