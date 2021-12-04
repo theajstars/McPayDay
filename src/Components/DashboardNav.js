@@ -40,7 +40,7 @@ export default function DashboardNav(){
                     <Link to="/dashboard" className="nav-item rubik">
                         Profile
                     </Link>
-                    <Link to="/dashboard" className="nav-item rubik">
+                    <Link to="/dashboard/transactions" className="nav-item rubik">
                         View all Transactions
                     </Link>
                     <Link to="/dashboard" className="nav-item rubik">

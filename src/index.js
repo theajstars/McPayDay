@@ -7,6 +7,7 @@ import Login from "./Components/Auth/Login";
 import Register from "./Components/Auth/Register";
 import Dashboard from "./Components/Dashboard";
 import Purchase from "./Components/Purchase";
+import Transactions from "./Components/Transactions";
 
 ReactDOM.render(
   <ToastProvider>
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/dashboard/purchase" element={<Purchase />} />
+        <Route exact path="/dashboard/transactions" element={<Transactions />} />
       </Routes>
     </Router>
   </ToastProvider>,

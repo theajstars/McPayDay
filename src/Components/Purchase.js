@@ -25,7 +25,7 @@ export default function Purchase(){
         }
     }
     const confirmPinForPuchase = () => {
-        
+
     }
     return (
         <>

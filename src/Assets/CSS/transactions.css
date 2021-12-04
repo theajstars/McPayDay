@@ -1,0 +1,50 @@
+.react-datepicker-wrapper{
+    width: fit-content !important;
+}
+.react-datepicker__input-container input{
+    padding: 4px !important;
+    font-family: "Jost", sans-serif;
+    font-size: 17px;
+    border: 1px solid var(--blue-darker);
+    border-radius: 0px 4px 4px 0px;
+    border-left: none;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.transaction-container{
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0px;
+}
+.date-row{
+    align-items: center;
+    justify-content: space-between;
+}
+.date-row span{
+    font-size: 17px;
+    padding: 5px 7px;
+    border-radius: 4px 0px 0px 4px;
+    height: 40px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}
+.filters-row{
+    align-items: center;
+    margin-top: 10px;
+}
+.filters-row span{
+    font-size: 17px;
+}
+.filter-radio{
+    font-size: 20px;
+    height: 18px;
+    width: 18px;
+    margin: 0px !important;
+    margin-right: 15px !important;
+    margin-left: 3px !important;
+}
+.all-trans{
+    margin-top: 50px;
+}

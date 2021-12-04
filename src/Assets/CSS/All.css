@@ -5,6 +5,7 @@
 @import url("./dashboard.css");
 @import url("./dashboard-nav.css");
 @import url("./purchase.css");
+@import url("./transactions.css");
 @import url("./small_screens/small-purchase.css");
 :root {
   --blue-lighter: #505ab6;
@@ -46,4 +47,7 @@
 }
 .none{
   display: none;
+}
+input[type="text"]{
+  outline: none !important;
 }
