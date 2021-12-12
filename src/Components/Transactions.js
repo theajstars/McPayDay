@@ -2,18 +2,30 @@ import React, { useState, useEffect } from 'react'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import DashboardNav from "./DashboardNav";
-import {Container} from "@mui/material";
+import { Pagination } from '@mui/material'
+import axios from "axios";
 export default function Transactions(){
 
     const [dateValue, setDateValue] = useState(new Date())
     const [transactionType, setTransactionType] = useState(0)
     const [pageNumber, setPageNumber] = useState(0)
+    const [transactions, setTransactions] = useState(new Array(15))
+    const [renderedTransactions, setRenderedTransactions] = useState([])
     const handleDateChange = date => {
         console.log(date)
         setDateValue(date)
     }
+    const paginationChange = (e, value) => {
+        console.clear()
+        console.log(value)
+        const currentRender = transactions.slice(value * 10, value * 10 + 10)
+        setRenderedTransactions(currentRender)
+    }
     useEffect(() => {
-        console.log(transactionType)
+        axios.get(`https://jsonplaceholder.typicode.com/users`)
+            .then(res => {
+                setTransactions(res.data.concat(res.data).concat(res.data))
+            })
     }, [transactionType])
     return(
         <>
@@ -55,44 +67,37 @@ export default function Transactions(){
 
                 </div>
                 <div className="all-trans flex-column">
-                    <div className="recent-transaction credit-trans flex-row">
-                            <span className="flex-column recent-transaction-left">
-                                <span className="rubik text-darker">
-                                    Add money
-                                </span>
-                                <span className="recent-transaction-date">
-                                    Sunday, December 21 2021
-                                </span>
-                            </span>
-                        <span className="recent-transaction-amount roboto">
-                                +7,550
-                            </span>
-                    </div>
-                    <div className="recent-transaction debit-trans flex-row">
-                            <span className="flex-column recent-transaction-left">
-                                <span className="rubik text-darker">
-                                    Lorem ipsum debtors
-                                </span>
-                                <span className="recent-transaction-date">
-                                    Sunday, December 28 2021
-                                </span>
-                            </span>
-                        <span className="recent-transaction-amount roboto">
-                                -580
-                            </span>
-                    </div>
+                    {
+                        renderedTransactions.map((transaction) => {
+                            const index = transactions.indexOf(transaction)
+                            console.log(transaction)
+                            return (
+                                <div className={`recent-transaction ${index % 2 === 0 ? "credit-trans" : "debit-trans"} flex-row`}>
+                                    <span className="flex-column recent-transaction-left">
+                                        <span className="rubik text-darker">
+                                            Add money {index}
+                                        </span>
+                                        <span className="recent-transaction-date">
+                                            Sunday, December 21 2021
+                                        </span>
+                                    </span>
+                                    <span className="recent-transaction-amount roboto">
+                                        +7,550
+                                     </span>
+                                </div>
+                            )
+                        })
+                    }
+
 
                 </div>
             </div>
             <div className="pag-container">
-                {/*<Pagination*/}
-                {/*    variant="outlined"*/}
-                {/*    shape="rounded"*/}
-                {/*    count={20}*/}
-                {/*    onChange={(e, value) => {*/}
-                {/*        setPageNumber(value);*/}
-                {/*    }}*/}
-                {/*/>*/}
+                <Pagination count={10} variant="outlined" color="primary"
+                    siblingCount={0}
+                            onChange={paginationChange}
+                />
+
             </div>
         </>
     )
