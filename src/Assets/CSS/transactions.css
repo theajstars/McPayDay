@@ -48,3 +48,9 @@
 .all-trans{
     margin-top: 50px;
 }
+.pag-container{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -18,7 +18,9 @@ ReactDOM.render(
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/dashboard/purchase" element={<Purchase />} />
-        <Route exact path="/dashboard/transactions" element={<Transactions />} />
+        <Route path="/dashboard/transactions/" element={<Transactions />}>
+          <Route exact path=":page:type" element={<Transactions />} />
+        </Route>
       </Routes>
     </Router>
   </ToastProvider>,

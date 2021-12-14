@@ -63,7 +63,7 @@ export default function Purchase(){
             <DashboardNav />
             <div className="purchase-container flex-column bg-white">
                 <span className="caterer-head text-darker jost">
-                    Lorem ipsum castes
+                    Caterer Name goes here
                 </span>
                 <center>
                     <small className="rubik text-darker" style={{
@@ -74,52 +74,52 @@ export default function Purchase(){
                 </center>
                 <div className="food-items">
                     <div className="food-grid-item jost flex-row">
-                        Alpha charlie one
+                        White Rice
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Alpha charlie one
+                        Bread
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Alpha charlie one
+                        Beans
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Alpha charlie one
+                        Jollof Rice
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Alpha charlie one
+                        Fried Rice
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Alpha charlie one
+                        Moi-Moi
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Alpha charlie one
+                        Boiled Egg
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Sigma chad
+                        Fried Egg
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Alpha charlie one
+                        Chicken
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Alpha charlie one
+                        Fish
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Alpha charlie one
+                        Indomie
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Sigma chad
+                        Spaghetti
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Alpha charlie one
+                        Swallow
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Alpha charlie one
+                        Shawarma
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Alpha charlie one
+                        *Some Food Name*
                     </div>
                     <div className="food-grid-item jost flex-row">
-                        Sigma chad
+                        *Some Food Name*
                     </div>
                 </div>
                 
